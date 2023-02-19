@@ -42,7 +42,7 @@ local function new(class)
 end
 
 local function exportClass(class)
-    return {name = class, functions = classFunctions[class], handler = classHandlers[class], keepsMt = classKeeps[class]}
+    return {name = class, default = classRegistry[class], functions = classFunctions[class], handler = classHandlers[class], keepsMt = classKeeps[class]}
 end
 
 local function importClass(class)
