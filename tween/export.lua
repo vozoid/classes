@@ -56,7 +56,6 @@ registerClassFunction("Tween", "play", function(self)
                 wrap(function()
                     self.object[property] = lerp(start_value, value, alpha)
                 end)()
-                print(self.object[property])
 
                 elapsed += render:Wait()
             end
