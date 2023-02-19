@@ -55,4 +55,4 @@ local function importClass(class)
     registerClassHandler(class.name, class.handler)
 end
 
-return registerClass, registerClassHandler, registerClassFunction, exportClass, importClass
+return new, registerClass, registerClassHandler, registerClassFunction, exportClass, importClass
