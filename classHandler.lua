@@ -1,3 +1,5 @@
+local clone = table.clone
+
 -- class registrarion
 local classRegistry = {}
 local classFunctions = {}
