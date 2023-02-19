@@ -25,7 +25,7 @@ local function new(class)
 
     -- why so unclean :(
     if classKeeps[class] then
-        local object = setmetatable(clone(classRegistry[class]), {__index = function(self, key)
+        object = setmetatable(clone(classRegistry[class]), {__index = function(self, key)
             return rawget(self, key) or (classFunctions[class][key] and function(...)
                 classFunctions[class][key](self, ...)
             end)
