@@ -46,7 +46,7 @@ local function exportClass(class)
 end
 
 local function importClass(class)
-    local class = registerClass(class.name, class.default, not class.keepsMt)
+    registerClass(class.name, class.default, not class.keepsMt)
 
     for name, handler in next, class.functions do
         registerClassFunction(class.name, name, handler)
