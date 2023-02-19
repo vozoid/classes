@@ -49,8 +49,6 @@ registerClassFunction("Tween", "play", function(self)
             local elapsed = 0
             while elapsed <= self.time and not self.cancelled do            
                 local delta = elapsed / self.time
-
-                -- Do the chosen EasingStyle's math
                 local alpha = easingFunction(delta)
 
                 wrap(function()
