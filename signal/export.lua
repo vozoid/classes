@@ -5,10 +5,12 @@ local new, registerClass, registerClassHandler, registerClassFunction, exportCla
 
 local wrap, yield, resume, running = coroutine.wrap, coroutine.yield, coroutine.resume, coroutine.running
 local find, remove = table.find, table.remove
+local random = math.random
 
 registerClass("Signal", {active = false, count = 0, connections = {}, ids = {}})
 
-registerClassFunction("Signal", "connect", function(self, id, handler)
+registerClassFunction("Signal", "connect", function(self, handler, id)
+    id = id or random(100000000, 999999999)
     self.connections[#self.connections + 1] = wrap(function(...)
         while true do
             handler(...)
