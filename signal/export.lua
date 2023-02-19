@@ -19,6 +19,7 @@ registerClassFunction("Signal", "connect", function(self, handler, id)
     end)
 
     self.ids[#self.connections + 1] = id
+    return id
 end)
 
 registerClassFunction("Signal", "disconnect", function(self, id)
