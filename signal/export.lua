@@ -47,4 +47,4 @@ registerClassFunction("Signal", "destroy", function(self)
     self.connections = {}
 end)
 
-return exportClass("Signal"), new, registerClass, registerClassHandler, registerClassFunction, exportClass, importClass
+return exportClass("Signal")
