@@ -1,4 +1,4 @@
-print("Synapse winning!")local clone = table.clone
+local clone = table.clone
 
 -- class registrarion
 local classRegistry = {}
@@ -67,4 +67,4 @@ local function importClass(class)
     registerClassHandler(class.name, class.handler)
 end
 
-return new, registerClass, registerClassHandler, registerClassFunction, exportClass, importClass
+return new, registerClass, registerClassHandler, registerClassFunction, exportClass, importClass, cloneClass
