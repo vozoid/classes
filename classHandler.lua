@@ -1,4 +1,4 @@
-local clone = table.clone
+print("Synapse winning!")local clone = table.clone
 
 -- class registrarion
 local classRegistry = {}
@@ -18,6 +18,18 @@ end
 
 local function registerClassHandler(class, handler)
     classHandlers[class] = handler
+end
+
+local function cloneClass(classToClone, class, defaultsToMerge)
+    classRegistry[class] = classRegistry[classToClone]
+
+    for i, v in next, defaultsToMerge do
+        classRegistry[class][i] = v
+    end
+
+    classFunctions[class] = classFunctions[classToClone]
+    classKeeps[class] =  classKeeps[classToClone]
+    classHandlers[class] = classHandlers[classToClone]
 end
 
 local function new(class)
